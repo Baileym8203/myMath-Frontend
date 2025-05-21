@@ -1,15 +1,11 @@
-@import "tailwindcss";
+@import "tailwindcss"; /* Import Tailwind's base styles */
 
+/* Global Color Theme Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Arial', sans-serif;
+  --font-mono: 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +15,10 @@
   }
 }
 
+/* Body Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
 }
