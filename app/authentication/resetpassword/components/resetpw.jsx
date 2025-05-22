@@ -1,8 +1,11 @@
+"use client";
+
 import {useState} from 'react';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-
+// for Vercel prerender
+export const dynamic = "force-dynamic";
 // will handle the user being able to reset their passwords
 export default function ResetPasswordComponent() {
 const [password, setPassword] = useState("")
