@@ -34,7 +34,7 @@ export default function LoginComponent() {
        if (res.status === 200) {
         console.log("successful login!");
        // ensures cookie is avalible to then re route the user 
-        await new promise(resolve => setTimeout(resolve, 100));
+        await new Promise(resolve => setTimeout(resolve, 100));
         router.push("/dashboard");
        } else {
         console.error("Unexpected status.", res.status);
