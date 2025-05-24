@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import axios from 'axios';
+import api from "@/app/utilitys/axiosconfig";
 
 
 // will be the main profile component!
@@ -12,7 +12,7 @@ const [userCourses, setUserCourses] = useState([]);
 useEffect(() => {
 const handleUserFetch = async () => {
 try {
-const res = await axios.get('http://localhost:5000/api/user', {withCredentials: true});
+const res = await api.get('/api/user');
 setUser(res.data[0]);
 } catch (err) {
 console.error('Failed to get the users info');
@@ -25,7 +25,7 @@ handleUserFetch();
 useEffect(() => {
 const handleUserCourseFetch = async () => {
 try {
-const res = await axios.get('http://localhost:5000/api/user/courses', {withCredentials: true});
+const res = await api.get('/api/user/courses');
 setUserCourses(res.data.map(course => course.course_name))
 } catch (err) {
 console.error('Error getting the users courses');
@@ -40,7 +40,7 @@ return (
 <main className="bg-white shadow-lg p-10 rounded-lg">
 <div className="flex justify-around text-center max-md:justify-center max-md:flex-col max-md:items-center">
 {user?.profile_image && (
-<img src={`http://localhost:5000${user.profile_image}`} alt="Profile" className="mb-3 mb-0 w-24 h-24 rounded-full mr-5 max-md:mr-0" />
+<img src={`${process.env.NEXT_PUBLIC_API_URL}${user.profile_image}`} alt="Profile" className="mb-3 mb-0 w-24 h-24 rounded-full mr-5 max-md:mr-0" />
 )}
 <div className="bg-gray-200/70 p-5 rounded-sm">
 <div className="flex flex-col">

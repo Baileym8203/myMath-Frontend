@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import axios from 'axios';
+import api from '@/app/utilitys/axiosconfig';
 
 // will allow the user to change their email and or name on their profile!
 export default function UpdateUserComponent() {
@@ -15,7 +15,7 @@ const updateUser = (e) => {
 // will be in charge of handleing the user update!
 const handleUserPutRequest = async () => {
 try {
- await axios.put('http://localhost:5000/api/user/update', {name, email, password}, {withCredentials: true});
+ await api.put('/api/user/update', {name, email, password});
  alert('Successful user update');
 } catch (err) {
 console.error('Error user update failed', err);

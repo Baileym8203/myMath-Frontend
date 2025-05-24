@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import api from "@/app/utilitys/axiosconfig";
 import SearchComponent from "./search";
 
 // will be the main courses function for the dashboard
@@ -15,7 +15,7 @@ useEffect(() => {
 const fetchCourses = async () => {
 try {
   // awaits grabbing the courses!
-const res = await axios.get('http://localhost:5000/api/courses', {withCredentials: true});
+const res = await api.get('/api/courses');
 // sets the courses to the data recieved!
 setCourses(res.data);
 // catches any errors along the way!!
@@ -32,7 +32,7 @@ useEffect(() => {
 const fetchUsersCourses = async () => {
 try {
 // will await the get request to the backend
-const res = await axios.get('http://localhost:5000/api/user/courses', {withCredentials: true});
+const res = await api.get('/api/user/courses');
 // sets the state of EnrollledCourses to the mapped data of all the resulting course stuff but only the id
 setEnrolledCourses(res.data.map(course => course.id));
 // catches any errors along the way!
@@ -47,7 +47,7 @@ fetchUsersCourses();
 const handleEnroll = async (courseID) => {
 try {
 // awaits posting the users course id into the backend with the token credientials
-await axios.post('http://localhost:5000/api/user/course', {courseID}, {withCredentials: true});
+await api.post('/api/user/course', {courseID});
 // sends a alert on success!
 alert('Enrolled Succesfully!');
 // catches any errors along the way!

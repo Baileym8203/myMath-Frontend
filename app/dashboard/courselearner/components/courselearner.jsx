@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import axios from 'axios'
+import api from '@/app/utilitys/axiosconfig';
 import { MathJax } from 'better-react-mathjax';
 
 // the main courselearner component!
@@ -20,9 +20,9 @@ const [closeChat, setCloseChat] = useState(false);
 useEffect(() => {
     const handleUserCourses = async () => {
 try {
-const res1 = await axios.get('http://localhost:5000/api/user/courses', {withCredentials: true});
+const res1 = await api.get('/api/user/courses');
 setUserCourses(res1.data);
-const res2 = await axios.get('http://localhost:5000/api/courses', {withCredentials: true});
+const res2 = await api.get('/api/courses');
 setAllCourses(res2.data);
 
 } catch (err) {
@@ -36,7 +36,7 @@ handleUserCourses();
 useEffect(() => {
     const handleChats = async () => {
 try {
-const res = await axios.get('http://localhost:5000/api/user/chats', {withCredentials: true});
+const res = await api.get('/api/user/chats');
 setUserChat(res.data);
 } catch (err) {
     console.error('Error getting the courses', err);
@@ -49,7 +49,7 @@ handleChats();
 useEffect(() => {
     const handleUser = async () => {
 try {
-const res = await axios.get('http://localhost:5000/api/user', {withCredentials: true});
+const res = await api.get('/api/user');
 setUsers(res.data);
 } catch (err) {
     console.error('Error getting the courses', err);
@@ -63,11 +63,9 @@ const handleUserMessages = async (e) => {
     e.preventDefault();
     setUserHitSubmit(true);
     try {
-      const res = await axios.post(
-        'http://localhost:5000/api/course-learner/ai-chat',
-        { message, selectedCourse },
-        { withCredentials: true }
-      );
+      const res = await api.post(
+        '/api/course-learner/ai-chat',
+        { message, selectedCourse });
 
       // grabs the data from the post 
       const reply = res.data.reply
@@ -77,7 +75,7 @@ const handleUserMessages = async (e) => {
       // creates a copy of the array to push the repy data to!
       // posts the user message and the ai response to the SQL database server
       setCloseChat(false);
-      await axios.post('http://localhost:5000/api/user/chat', {message, aiResponse: reply}, {withCredentials: true});
+      await api.post('/api/user/chat', {message, aiResponse: reply});
       console.log('chat saved!');
       setMessage("");
     } catch (err) {
@@ -95,7 +93,7 @@ const handleUserMessages = async (e) => {
   // will refresh the page after the user starts a new chat!
   location.reload();
   try {
-   await axios.delete('http://localhost:5000/api/user/newchat', {withCredentials: true});
+   await api.delete('/api/user/newchat');
   } catch (err) {
   console.error('Error creating new chat!')
   }

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from "@/app/utilitys/axiosconfig";
 
 // will handle the uploading of the users profile images!
 export default function ImageUploaderComponent() {
@@ -12,8 +12,7 @@ const handleImageUpload = async (e) => {
   formData.append('image', e.target.image.files[0]);
 try {
   // will await a post to the backend with the image from the user
-  await axios.post('http://localhost:5000/api/user/profile-image', formData, {
-    withCredentials: true,
+  await api.post('/api/user/profile-image', formData, {
     // this is a multipart form upload! it will let the backend know!
     headers: { 'Content-Type': 'multipart/form-data' }
   });

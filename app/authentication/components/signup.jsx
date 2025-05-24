@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "@/app/utilitys/axiosconfig";
 import { useRouter } from "next/navigation";
 
 // this will be my main sign up function
@@ -63,11 +63,11 @@ export default function SignUpComponent() {
       // only signs up user if they have an uppercase letter in their password and a symbol
       if (passwordUpper && passwordSymbol) {
         // will await the post to the backend with the following data!
-      const post = await axios.post("http://localhost:5000/api/signup", {
+      const post = await api.post("/api/signup", {
         name,
         email,
         password,
-      }, {withCredentials: true});
+      });
       console.log("user signed up ", post);
     
       // will route the user to home on sign up!

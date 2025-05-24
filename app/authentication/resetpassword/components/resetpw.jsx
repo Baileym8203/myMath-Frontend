@@ -1,7 +1,7 @@
 "use client";
 
 import {useState} from 'react';
-import axios from 'axios';
+import api from '@/app/utilitys/axiosconfig';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 // for Vercel prerender
@@ -27,7 +27,7 @@ e.preventDefault()
 
 try {
 // awaits a update request to the backend with the user typed password!
-const updatePW = await axios.put('http://localhost:5000/api/reset-password', {password, token}, {withCredentials: true});
+const updatePW = await api.put('/api/reset-password', {password, token});
 // if the request fails
 if (!updatePW) {
 console.error('Error updating password');

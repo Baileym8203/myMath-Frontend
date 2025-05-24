@@ -1,11 +1,9 @@
 "use client";
-import {useState, useEffect} from 'react';
 import ProfileComponent from "./components/profile";
 import ChangeProfileImageComponent from "./components/profileimageswap";
 
 // will be the main /dashboard/profile page!
 export default function ProfilePage() {
-const [width, setWidth] = useState(false);
 
 return (
 <main className="flex flex-col justify-center items-center p-6 bg-linear-to-br from-sky-400 via-violet-500 to-purple-400 min-h-screen">

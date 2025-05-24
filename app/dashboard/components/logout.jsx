@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import api from "@/app/utilitys/axiosconfig";
 
 
 // my main logout function!
@@ -10,7 +10,7 @@ const router = useRouter();
 const handleLogout = async () => {
 try {
 // will await a post to the backend logout endpoint
-await axios.post("http://localhost:5000/api/logout", {}, {withCredentials: true});
+await api.post("/api/logout");
 console.log('Successfully logged out');
 // redirects the user to the authentication page
 router.push('/authentication');

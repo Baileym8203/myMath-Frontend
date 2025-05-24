@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import axios from 'axios';
+import api from '@/app/utilitys/axiosconfig';
 import { useRouter } from 'next/navigation';
 
 // will handle the user when the forgot their password
@@ -16,7 +16,7 @@ e.preventDefault();
 
 try {
 // awaits a post request to the backend with the users entered email
-const post = await axios.post('http://localhost:5000/api/forgot-password', {email}, {withCredentials: true});
+const post = await api.post('/api/forgot-password', {email});
 // if no post was made
 if (!post) {
 console.error('failed due to a post issue');

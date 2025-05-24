@@ -1,12 +1,10 @@
 "use client";
-import {useState, useEffect} from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import LogoutComponent from "./logout";
 
 // will be the dashboards main navigational bar!
 export default function NavbarComponent() {
-const [isSmall, setIsSmall] = useState(false);
 
 const router = useRouter();
 

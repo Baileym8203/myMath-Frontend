@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import axios from 'axios';
+import api from '@/app/utilitys/axiosconfig';
 import { useRouter } from 'next/navigation';
 
 // will be the main function for deleteing the current user that is logged in!
@@ -14,7 +14,7 @@ const deleteUser = (e) => {
 e.preventDefault();
 const fetchDelete = async () => {
 try {
-await axios.delete('http://localhost:5000/api/user/delete', {password}, {withCredentials: true});
+await api.delete('/api/user/delete', {password});
 alert('Successfully Deleted your user, now redirecting to login....');
 setTimeout(() => {
 router.push('/authentication');

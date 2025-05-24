@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import api from "@/app/utilitys/axiosconfig";
 
 // my main login function!
 export default function LoginComponent() {
@@ -26,10 +26,10 @@ export default function LoginComponent() {
 
     try {
       // will send the user and password typed!
-      const post = await axios.post("http://localhost:5000/api/login", {
+      const post = await api.post("/api/login", {
         email,
         password,
-      }, {withCredentials: true});
+      });
       // ensures post data flow
       if (!post) {
         console.error("login failed due to post issues");

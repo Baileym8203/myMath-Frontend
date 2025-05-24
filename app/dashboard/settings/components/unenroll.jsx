@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from 'react';
-import axios from 'axios';
+import api from '@/app/utilitys/axiosconfig';
 import { useRouter } from 'next/navigation';
 
 // will be the main function that handles the user unenrolling in a course
@@ -17,7 +17,7 @@ const router = useRouter();
 useEffect(() => {
 const handleUserCourse = async () => {
 try {
-const res = await axios.get('http://localhost:5000/api/user/courses', {withCredentials: true});
+const res = await api.get('/api/user/courses');
 setUserCourses(res.data);
 } catch (err) {
 console.error('Error has occured fetching the user courses', err);
@@ -30,7 +30,7 @@ handleUserCourse();
 useEffect(() => {
 const handleCourse = async () => {
 try {
-const res = await axios.get('http://localhost:5000/api/courses', {withCredentials: true});
+const res = await api.get('/api/courses');
 setAllCourses(res.data);
 } catch (err) {
 console.error('Error getting the courses', err);
@@ -43,7 +43,7 @@ handleCourse();
 const handleUnenrollCourse = async (e) => {
 e.preventDefault();
 try {
-await axios.delete('http://localhost:5000/api/users/course', {data: {courseID, password}, withCredentials: true});
+await api.delete('/api/users/course', {data: {courseID, password}});
 alert('Successfully Unenrolled in course');
 setTimeout(() => {
 location.reload();

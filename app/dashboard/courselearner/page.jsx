@@ -1,5 +1,5 @@
 "use client";
-import { MathJaxContext, MathJax } from "better-react-mathjax";
+import { MathJaxContext} from "better-react-mathjax";
 import CourseLearnerComponent from "./components/courselearner";
 
 const config = {
