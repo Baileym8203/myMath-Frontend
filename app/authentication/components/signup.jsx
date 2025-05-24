@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import api from "@/app/utilitys/axiosconfig";
 import { useRouter } from "next/navigation";
-import { promises } from "supertest/lib/test";
 
 // this will be my main sign up function
 export default function SignUpComponent() {
@@ -75,7 +74,7 @@ export default function SignUpComponent() {
       if (post.status === 200 || post.status === 201) {
         console.log("successful Sign Up!");
         // ensures the cookie is avalable for redirect to happen!
-        await new promises(resolve => (resolve, 100));
+        await new promise(resolve => setTimeout(resolve, 100));
         router.push("/dashboard");
       } else {
       console.error("Error with sign up", post.status);
