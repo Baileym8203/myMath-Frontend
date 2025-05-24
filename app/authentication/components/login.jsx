@@ -26,17 +26,19 @@ export default function LoginComponent() {
 
     try {
       // will send the user and password typed!
-      const post = await api.post("/api/login", {
+      const res = await api.post("/api/login", {
         email,
         password,
       });
       // ensures post data flow
-      if (!post) {
-        console.error("login failed due to post issues");
-      } else {
+       if (res.status === 200) {
         console.log("successful login!");
+       // ensures cookie is avalible to then re route the user 
+        await new promise(resolve => setTimeout(resolve, 100));
         router.push("/dashboard");
-      }
+       } else {
+        console.error("Unexpected status.", res.status);
+       }
     } catch (err) {
       console.error("login has failed", err);
     }
