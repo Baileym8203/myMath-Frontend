@@ -31,7 +31,6 @@ export default function LoginComponent() {
         email,
         password,
       });
-    }
       // ensures post data flow
        if (res.status === 200) {
         console.log("successful login!");
@@ -40,6 +39,7 @@ export default function LoginComponent() {
        } else {
         console.error("Unexpected status.", res.status);
        }
+      }
     } catch (err) {
       console.error("login has failed", err);
     }
