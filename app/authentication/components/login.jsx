@@ -9,6 +9,10 @@ export default function LoginComponent() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+// NEED TO FIX LOGIN ALWAYS NEEDS TO LOGIN TWICE
+// FIX MAYBE WITH USEEFFCT OR WINDOW.location.href = .....
+
+
   const router = useRouter();
 
  // will allow the user to see the password they are typing!
@@ -35,7 +39,8 @@ export default function LoginComponent() {
        if (res.status === 200) {
         console.log("successful login!");
        // ensures cookie is avalible to then re route the user 
-        router.push("/dashboard");
+       // hardcodes forcing the user to the endpoint /dashboard!
+        window.location.href === '/dashboard';
        } else {
         console.error("Unexpected status.", res.status);
        }
