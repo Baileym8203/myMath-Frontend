@@ -23,13 +23,15 @@ export default function LoginComponent() {
   const handleLogin = async (e) => {
     // will do this without refreshing the page
     e.preventDefault();
-
+  
     try {
+      if (email !== "" && password !== "") {
       // will send the user and password typed!
       const res = await api.post("/api/login", {
         email,
         password,
       });
+    }
       // ensures post data flow
        if (res.status === 200) {
         console.log("successful login!");

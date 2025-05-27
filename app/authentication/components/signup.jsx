@@ -61,7 +61,7 @@ export default function SignUpComponent() {
 
     try {
       // only signs up user if they have an uppercase letter in their password and a symbol
-      if (passwordUpper && passwordSymbol) {
+      if (passwordUpper && passwordSymbol && name !== "" && email !== "" && password !== "") {
         // will await the post to the backend with the following data!
       const post = await api.post("/api/signup", {
         name,
