@@ -40,7 +40,7 @@ export default function LoginComponent() {
         console.log("successful login!");
        // ensures cookie is avalible to then re route the user 
        // hardcodes forcing the user to the endpoint /dashboard!
-        window.location.href === '/dashboard';
+        window.location.href = '/dashboard';
        } else {
         console.error("Unexpected status.", res.status);
        }
