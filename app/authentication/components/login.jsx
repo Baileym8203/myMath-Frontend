@@ -22,7 +22,7 @@ router.push('/dashboard');
 } else {
 return null;
 }
-}, []);
+}, [isAuth]);
 
  // will allow the user to see the password they are typing!
  const handlePasswordShown = async () => {
