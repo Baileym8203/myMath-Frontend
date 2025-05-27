@@ -17,11 +17,9 @@ const router = useRouter();
 
 // will redirect the user after login ensuring the middleware gets its info before the redirect!
 useEffect(() => {
-if (isAuth) {
+if (isAuth && router.pathname !== '/dashboard') {
 router.push('/dashboard');
-} else {
-return null;
-}
+} 
 }, [isAuth]);
 
  // will allow the user to see the password they are typing!
