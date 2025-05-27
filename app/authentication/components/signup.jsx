@@ -74,7 +74,6 @@ export default function SignUpComponent() {
       if (post.status === 200 || post.status === 201) {
         console.log("successful Sign Up!");
         // ensures the cookie is avalable for redirect to happen!
-        await new Promise(resolve => setTimeout(resolve, 100));
         router.push("/dashboard");
       } else {
       console.error("Error with sign up", post.status);
