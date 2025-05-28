@@ -8,19 +8,8 @@ export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [isAuth, setIsAuth] = useState(false);
-
-// NEED TO FIX LOGIN ALWAYS NEEDS TO LOGIN TWICE
-// FIX MAYBE WITH USEEFFCT OR WINDOW.location.href = .....
 
 const router = useRouter();
-
-// will redirect the user after login ensuring the middleware gets its info before the redirect!
-useEffect(() => {
-if (isAuth && router.pathname !== '/dashboard') {
-router.push('/dashboard');
-} 
-}, [isAuth]);
 
  // will allow the user to see the password they are typing!
  const handlePasswordShown = async () => {
@@ -46,14 +35,12 @@ router.push('/dashboard');
        if (res.status === 200) {
         console.log("successful login!");
        // ensures cookie is avalible to then re route the user 
-        setIsAuth(true);
+        window.location.href = '/dashboard'
        } else {
-        setIsAuth(false);
         console.error("Unexpected status.", res.status);
        }
       }
     } catch (err) {
-      setIsAuth(false);
       console.error("login has failed", err);
     }
   };
