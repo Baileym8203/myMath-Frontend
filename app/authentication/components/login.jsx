@@ -48,7 +48,7 @@ const router = useRouter();
   return (
     <form
       onSubmit={handleLogin}
-      className="text-center items-center justify-center w-full max-w-md bg-white p-6 rounded-lg shadow-lg bg-opacity-100 text-opacity-100 appearance-none focus:outline-none"
+      className="text-center text-black items-center justify-center w-full max-w-md bg-white p-6 rounded-lg shadow-lg bg-opacity-100 text-opacity-100 appearance-none focus:outline-none"
     >
       <h1 className="text-3xl text-center mb-5">Login</h1>
       <h2>Email</h2>
