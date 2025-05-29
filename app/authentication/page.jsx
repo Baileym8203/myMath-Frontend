@@ -35,7 +35,7 @@ export default function Auth() {
         <SignUpComponent />
         <button
           onClick={handleAuthShown}
-          className="p-2 bg-green-400 rounded-sm hover:bg-green-300 mb-5 mt-5 shadow-lg w-full"
+          className="p-2 bg-green-400 rounded-sm hover:bg-green-300 mb-5 mt-5 shadow-lg w-full text-black"
         >
           Show Login
         </button>
@@ -46,7 +46,7 @@ export default function Auth() {
         <LoginComponent />
         <button
           onClick={handleAuthShown}
-          className="p-2 bg-green-400 rounded-sm hover:bg-green-300 mb-5 mt-5 shadow-lg w-full"
+          className="p-2 bg-green-400 rounded-sm hover:bg-green-300 mb-5 mt-5 shadow-lg w-full text-black"
         >
           Show Signup
         </button>

@@ -39,7 +39,7 @@ setShowPassword(false);
 
 // ADD ENTER PASSWORD TO CONFIRM!!
 return (
-<main className='flex flex-col items-center justify-center bg-white p-10 shadow-lg rounded-md'>
+<main className='flex flex-col items-center justify-center bg-white p-10 shadow-lg rounded-md text-black'>
 <form onSubmit={deleteUser} className='flex flex-col items-center'>
 <h1 className='font-extrabold'>Delete Your User</h1>
 <input className='w-100 p-2 border-1 mt-3 shadow-md max-md:w-50' placeholder='Confirm With Your password' type={showPassword ? 'text' : 'password'} onChange={(e) => Setpassword(e.target.value)}/>

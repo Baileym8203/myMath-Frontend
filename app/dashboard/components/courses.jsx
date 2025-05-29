@@ -99,7 +99,7 @@ console.error('Enroll failed, err');
                       className="h-40 object-cover rounded-md shadow-sm"
                     />
                       </button>
-                       <h1 className="text-center font-bold">{course.title}</h1>
+                       <h1 className="text-center font-bold text-black">{course.title}</h1>
                       </div>
                     ) : (
                       <div>
@@ -112,7 +112,7 @@ console.error('Enroll failed, err');
                       alt={course.title}
                       className="h-40 object-cover rounded-md shadow-sm transition-[height] duration-750 delay-50 hover:h-60"
                     />
-                    <h1 className="font-bold mt-3">{course.title}</h1>
+                    <h1 className="font-bold mt-3 text-black">{course.title}</h1>
                       </button>
                       </div>
                     )}

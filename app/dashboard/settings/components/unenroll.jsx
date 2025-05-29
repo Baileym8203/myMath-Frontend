@@ -65,8 +65,8 @@ setShowPassword(false);
 const courses = allCourses.filter(ac => userCourses.some(uc => uc.id === ac.id))
 
 return (
-<main className='bg-white mt-3 p-10 mb-3 rounded-md'>
-    <h1 className='font-extrabold mb-3 text-center'>Unenroll From Course</h1>
+<main className='bg-white mt-3 p-10 mb-3 rounded-md text-black'>
+<h1 className='font-extrabold mb-3 text-center'>Unenroll From Course</h1>
 <form onSubmit={handleUnenrollCourse} className='flex flex-col items-center justify-center'>
 <select className='mb-3' onChange={(e) => setCourseID(e.target.value)} required>
 <option value="">Drop A Course</option>

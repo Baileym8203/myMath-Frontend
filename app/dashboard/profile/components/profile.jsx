@@ -37,7 +37,7 @@ handleUserCourseFetch();
 // FIX THIS PAGE LAYOUT WEIRD WHEN THE VIEWPORT SHRINKS TO PHONE SIZE!
 
 return (
-<main className="bg-white shadow-lg p-10 rounded-lg">
+<main className="bg-white shadow-lg p-10 rounded-lg text-black">
 <div className="flex justify-around text-center max-md:justify-center max-md:flex-col max-md:items-center">
 {user?.profile_image && (
 <img src={`${process.env.NEXT_PUBLIC_API_URL}${user.profile_image}`} alt="Profile" className="mb-3 mb-0 w-24 h-24 rounded-full mr-5 max-md:mr-0" />

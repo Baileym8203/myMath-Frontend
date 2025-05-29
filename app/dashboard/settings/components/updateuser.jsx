@@ -34,7 +34,7 @@ setShowPassword(false);
 }
 
 return (
-<main className='mr-3 max-lg:mr-0 max-lg:mb-3'>
+<main className='mr-3 max-lg:mr-0 max-lg:mb-3 text-black'>
 <form onSubmit={updateUser} className=''>
 <div className='flex flex-col bg-white shadow-lg justify-center items-center p-10 rounded-md max-md:p-3'>
 <h1 className='mb-3 font-extrabold'>Update Your User</h1>

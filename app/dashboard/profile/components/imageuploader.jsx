@@ -25,7 +25,7 @@ console.error('Something went wrong uploading your image!', err)
 return (
   <form onSubmit={handleImageUpload} className='flex flex-col'>
   <input type="file" name="image" className="mb-5"/>
-  <button className='bg-blue-400 rounded-sm p-1 hover:bg-blue-300' type="submit">Upload</button>
+  <button className='bg-blue-400 rounded-sm p-1 hover:bg-blue-300 text-black' type="submit">Upload</button>
 </form>
 
   );

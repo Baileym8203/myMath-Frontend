@@ -91,7 +91,7 @@ export default function SignUpComponent() {
   return (
     <form
       onSubmit={handleSignUp}
-      className="text-center items-center justify-center w-full max-w-md bg-white p-6 rounded-lg shadow-lg"
+      className="text-center items-center justify-center w-full max-w-md bg-white p-6 rounded-lg shadow-lg bg-opacity-100 text-opacity-100 appearance-none focus:outline-none text-black"
     >
       <h1 className="text-3xl text-center mb-5">Signup</h1>
       <h2>Name</h2>

@@ -198,7 +198,7 @@ return (
     chatExists && !closeChat && (
       <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-md p-6 z-40 h-96 overflow-y-auto">
          <div className='flex justify-end'>
-        <button onClick={handleResponseCloseAndOpen} className='hover:bg-gray-100'>X</button>
+        <button onClick={handleResponseCloseAndOpen} className='hover:bg-gray-100 text-black'>X</button>
         </div>
         <h2 className="text-xl font-bold text-center text-blue-600 mb-2">Chat</h2>
         {user.map((user, index) => (

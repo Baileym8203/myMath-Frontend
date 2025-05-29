@@ -19,7 +19,7 @@ return (
 <img src="mymathlogo.png" className='w-14 h-14'></img>
 <div className="min-md:hidden">
 <select className='p-2 px-0 bg-gray-100 rounded-sm shadow-lg appearance-none' onChange={handleOptiosnNav} >
-<option className="text-center" value="">&#9776;</option>
+<option className="text-center text-black" value="">&#9776;</option>
 <option className="text-center" value="/dashboard">
 Dashboard
 </option>

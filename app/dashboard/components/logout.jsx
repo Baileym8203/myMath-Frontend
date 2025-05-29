@@ -21,6 +21,6 @@ console.error('Error logging out:', err);
 }
 
 return (
-<button onClick={handleLogout} className=" bg-red-400 hover:bg-red-500 p-2 rounded-sm shadow-md max-md:ml-3">Logout</button>
+<button onClick={handleLogout} className=" bg-red-400 hover:bg-red-500 p-2 rounded-sm shadow-md max-md:ml-3 text-black">Logout</button>
 )
 }
