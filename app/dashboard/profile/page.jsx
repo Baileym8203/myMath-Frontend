@@ -1,6 +1,5 @@
 "use client";
 import ProfileComponent from "./components/profile";
-import ChangeProfileImageComponent from "./components/profileimageswap";
 
 // will be the main /dashboard/profile page!
 export default function ProfilePage() {
@@ -11,7 +10,6 @@ return (
 <h1 className="font-extrabold text-5xl text-white mb-3 text-shadow-lg/20">Profile</h1>
 </div>
 <ProfileComponent />
-<ChangeProfileImageComponent />
 </main>
 )
 }
