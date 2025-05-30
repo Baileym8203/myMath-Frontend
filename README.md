@@ -13,7 +13,7 @@ pnpm dev
 # or
 bun dev
 ```
-# Need Backend running to make requests I.E login or signup or get any use of the application
+#### Need Backend running to make requests I.E login or signup or get any use of the application
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
@@ -23,7 +23,13 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## A Sneak Peek Into the site...
 
+![App Screenshot](https://raw.githubusercontent.com/Baileym8203/myMath-Frontend/87777cc54f75d82dd11ca9a7ef846fc635e3dcd1/public/mymathlogin.png)
 
+![App Screenshot](https://raw.githubusercontent.com/Baileym8203/myMath-Frontend/87777cc54f75d82dd11ca9a7ef846fc635e3dcd1/public/mymathsignup.png)
+
+![App Screenshot](https://raw.githubusercontent.com/Baileym8203/myMath-Frontend/87777cc54f75d82dd11ca9a7ef846fc635e3dcd1/public/mymathdashboard.png)
+
+![App Screenshot](https://raw.githubusercontent.com/Baileym8203/myMath-Frontend/87777cc54f75d82dd11ca9a7ef846fc635e3dcd1/public/mymathchat.png)
 
 ## What Is MyMath?
 
